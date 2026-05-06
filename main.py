@@ -20,6 +20,8 @@ def main():
         "being optimized for 32-bit computations."
     )
     print("Tensors shape:", [t.shape for t in tensors])
+    # .reshape and .view are (practically) equivalent
+    print("Reshaped matrix (2D tensor):", tensors[2].reshape([1, 4]))
 
 
 def check_nvidia_gpu_acceleration() -> bool:
