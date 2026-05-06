@@ -2,19 +2,22 @@ import torch
 
 
 def main():
-    print("Apple Silicon chip acceleration:", check_apple_silicon_chip_acceleration())
-    print("Tensors of increasing dimensions:", get_tensors())
-    print("Tensors type:", [t.dtype for t in get_tensors()])
+    has_acceleration = check_apple_silicon_chip_acceleration()
+    print("Apple Silicon chip acceleration:", has_acceleration)
+
+    tensors = get_tensors()
+    print("Tensors of increasing dimensions:", tensors)
+    print("Tensors type:", [t.dtype for t in tensors])
     print(
         "Tensors type after convertion to float32:",
-        [t.dtype for t in convert_tensors_to_float32(get_tensors())],
+        [t.dtype for t in convert_tensors_to_float32(tensors)],
     )
     print(
         "float32 is particularly useful because they're in the sweet spot "
         "between being usable for most deep learning use cases and computers "
         "being optimized for 32-bit computations."
     )
-    print("Tensors shape:", [t.shape for t in get_tensors()])
+    print("Tensors shape:", [t.shape for t in tensors])
 
 
 def check_apple_silicon_chip_acceleration() -> bool:
