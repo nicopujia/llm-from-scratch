@@ -2,8 +2,10 @@ import torch
 
 
 def main():
-    has_acceleration = check_apple_silicon_chip_acceleration()
-    print("Apple Silicon chip acceleration:", has_acceleration)
+    has_apple_silicon_chip_acceleration = check_apple_silicon_chip_acceleration()
+    has_nvidia_gpu_acceleration = check_nvidia_gpu_acceleration()
+    print("NVIDIA GPUs acceleration:", has_nvidia_gpu_acceleration)
+    print("Apple Silicon chip acceleration:", has_apple_silicon_chip_acceleration)
 
     tensors = get_tensors()
     print("Tensors of increasing dimensions:", tensors)
@@ -20,7 +22,15 @@ def main():
     print("Tensors shape:", [t.shape for t in tensors])
 
 
+def check_nvidia_gpu_acceleration() -> bool:
+    # CUDA stands for Compute Unified Device Architecture.
+    # It's basically NVIDIA's way to program their GPUs.
+    return torch.cuda.is_available()
+
+
 def check_apple_silicon_chip_acceleration() -> bool:
+    # MPS stands for Metal Performance Shaders.
+    # It refers to shaders running on Apple hardware.
     return torch.backends.mps.is_available()
 
 
