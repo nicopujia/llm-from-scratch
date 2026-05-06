@@ -1,5 +1,8 @@
+import torch
+
+
 def main():
-    print("Hello from llm-from-scratch!")
+    print(torch.backends.mps.is_available())
 
 
 if __name__ == "__main__":
