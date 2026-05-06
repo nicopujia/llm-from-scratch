@@ -14,6 +14,7 @@ def main():
         "between being usable for most deep learning use cases and computers "
         "being optimized for 32-bit computations."
     )
+    print("Tensors shape:", [t.shape for t in get_tensors()])
 
 
 def check_apple_silicon_chip_acceleration() -> bool:
