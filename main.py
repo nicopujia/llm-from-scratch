@@ -8,7 +8,7 @@ def main():
     print("Apple Silicon chip acceleration:", has_apple_silicon_chip_acceleration)
 
     tensors = get_tensors()
-    print("Tensors of increasing dimensions:", tensors)
+    print("Tensors of increasing dimensions:", *tensors, sep="\n")
     print("Tensors type:", [t.dtype for t in tensors])
     print(
         "Tensors type after convertion to float32:",
@@ -22,6 +22,8 @@ def main():
     print("Tensors shape:", [t.shape for t in tensors])
     # .reshape and .view are (practically) equivalent
     print("Reshaped matrix (2D tensor):", tensors[2].reshape([1, 4]))
+    # To transpose a matrix means switch its row and column indices.
+    print("Transposed matrix:", tensors[2].T, sep="\n")
 
 
 def check_nvidia_gpu_acceleration() -> bool:
