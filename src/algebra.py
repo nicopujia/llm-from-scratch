@@ -15,9 +15,7 @@ def main():
         [t.dtype for t in convert_tensors_to_float32(tensors)],
     )
     print(
-        "float32 is particularly useful because they're in the sweet spot "
-        "between being usable for most deep learning use cases and computers "
-        "being optimized for 32-bit computations."
+        "float32 is particularly useful because they're in the sweet spot between being usable for most deep learning use cases and computers being optimized for 32-bit computations."
     )
     print("Tensors shape:", [t.shape for t in tensors])
     # .reshape and .view are (practically) equivalent
