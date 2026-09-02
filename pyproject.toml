@@ -13,3 +13,8 @@ dependencies = [
 
 [tool.basedpyright]
 typeCheckingMode = "standard"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
