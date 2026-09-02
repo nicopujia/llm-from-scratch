@@ -12,6 +12,8 @@ There are 3 perspectives of what vectors are:
 
 In linear algebra, they're conventionally written with vertically and with square brackets instead of horizontally and with parenthesis to differenciate them from coordinates.
 
+Another convention is that the "tail" of a vector is assumed to be at the origin `(0, 0)`. While it could be anywhere, because what matters is its length and direction, this convention makes physics and CS perspectives match perfectly.
+
 ### Addition
 
 *Physics-like method*: for adding vector `v` + vector `w`, put `v`'s "tail" in `w`'s "head", then draw a new vector from `w`'s "tail" to `v`'s "head", and that's the result of the addition. The same can be done interchangeably with `v` and `w`—the order doesn't matter. A vector, let's say `[-2, 3]`, can be understood as "take 2 steps to the left, then 3 up."
@@ -22,4 +24,4 @@ Both methods are equivalent because they mean the same thing, just represented d
 
 ### Scaling
 
-A scalar is a single number. Scaling a vector means multiplying it by a scalar. By doing so, you can "stretch" or "shrink" the vector. To scale a vector, multiply each vector number by the scalar, ie `[A, B] * C = [A*C, B*C]`
+A scalar is a single number. Scaling a vector means multiplying it by a scalar. By doing so, you can "stretch", "shrink", or "flip" the vector. Flipping happens when the scalar is negative. To scale a vector, multiply each vector number by the scalar, ie `[A, B] * C = [A*C, B*C]`
