@@ -61,3 +61,36 @@ class Vector:
         for vector, scalar in zip(vectors, scalars):
             acc += vector * scalar
         return acc
+
+
+def main() -> None:
+    v = Vector(2, 3)
+    w = Vector(1, -2)
+    r = v + w
+    r_inv = r * -1
+
+    import matplotlib.pyplot as plt
+
+    LIMIT = 5
+
+    _fig, ax = plt.subplots()
+    ax.set_xlim(-LIMIT, LIMIT)
+    ax.set_ylim(-LIMIT, LIMIT)
+    ax.spines[["left", "bottom"]].set_position("zero")
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.set_aspect("equal")
+
+    ax.quiver(0, 0, *v.values, color="blue", scale_units="xy", angles="xy", scale=1)
+    ax.quiver(
+        *v.values, *w.values, color="purple", scale_units="xy", angles="xy", scale=1
+    )
+    ax.quiver(0, 0, *r.values, color="red", scale_units="xy", angles="xy", scale=1)
+    ax.quiver(
+        0, 0, *r_inv.values, color="orange", scale_units="xy", angles="xy", scale=1
+    )
+
+    plt.show()
+
+
+if __name__ == "__main__":
+    main()
